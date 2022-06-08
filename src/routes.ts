@@ -6,11 +6,13 @@ import { SubmitVehicleUseCase } from './use-cases/submit-vehicle-use-case'
 export const routes = express.Router()
 
 routes.get('/vehicles', async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://freestop-front.vercel.app/")
   const transactions = await prisma.vehicle.findMany();
   res.json(transactions)
 })
 
 routes.post('/vehicles', async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://freestop-front.vercel.app/")
   const { model, plateNumber, createdAt } = req.body
 
   try {
@@ -32,6 +34,7 @@ routes.post('/vehicles', async (req, res) => {
 })
 
 routes.delete('/vehicles/plateNumber', async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://freestop-front.vercel.app/")
   const { plateNumber } = req.body
     
   try {
