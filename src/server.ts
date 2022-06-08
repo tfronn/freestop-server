@@ -5,8 +5,9 @@ import { routes } from './routes';
 const app = express();
 
 const corsOptions = {
-  origin: "https://freestop-front.vercel.app/",
-  "Access-Control-Allow-Origin": "https://freestop-front.vercel.app/",
+  origin: "https://freestop-front.vercel.app",
+
+  "Access-Control-Allow-Origin": "https://freestop-front.vercel.app",
   "Access-Control-Allow-Methods": "GET,POST,DELETE,HEAD,OPTIONS"
 }
 
